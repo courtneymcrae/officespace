@@ -1,0 +1,29 @@
+<%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :listing_name %><br>
+    <%= f.text_field :listing_name %>
+  </div>
+  <div class="field">
+    <%= f.label :bath_room %><br>
+    <%= f.text_field :bath_room %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br>
+    <%= f.check_box :summary %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
